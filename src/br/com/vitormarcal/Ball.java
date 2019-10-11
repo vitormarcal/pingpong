@@ -5,8 +5,7 @@ import java.util.Random;
 
 public class Ball implements Entity {
 
-    public final int width;
-    public final int height;
+    private final CustomDimension dimension;
     private double x;
     private double y;
     private double dx;
@@ -17,8 +16,8 @@ public class Ball implements Entity {
     public Ball(double x, double y) {
         this.x = x;
         this.y = y;
-        width = 4;
-        height = 4;
+
+        dimension = CustomDimension.of(4, 4);
 
         int angle = new Random().nextInt(75) + 46;
         dx = Math.cos(Math.toRadians(angle));
@@ -28,7 +27,7 @@ public class Ball implements Entity {
     @Override
     public void tick() {
 
-        if (x + (dx * speed) + width >= Game.WIDTH) {
+        if (x + (dx * speed) + dimension.getWidth() >= Game.dimension.getWidth()) {
             dx *= -1;
         } else if (x + (dx * speed) < 0) {
             dx *= -1;
@@ -37,7 +36,7 @@ public class Ball implements Entity {
         x += dx * speed;
         y += dy * speed;
 
-        if (y >= Game.HEIGHT) {
+        if (y >= Game.dimension.getHeight()) {
             System.out.println("Ponto do inimigo!");
             new Game();
             return;
@@ -47,9 +46,9 @@ public class Ball implements Entity {
             return;
         }
 
-        Rectangle bounds = new Rectangle((int) (x + (dx * speed)), (int) (y + (dx * speed)), width, height);
-        Rectangle boundsPlayer = new Rectangle((int) Game.player.getX(), (int) Game.player.getY(), Game.player.width, Game.player.height);
-        Rectangle boundsEnemy = new Rectangle((int) Game.enemy.getX(), (int) Game.enemy.getY(), Game.enemy.width, Game.enemy.height);
+        Rectangle bounds = new Rectangle((int) (x + (dx * speed)), (int) (y + (dx * speed)), dimension.getWidth(), dimension.getHeight());
+        Rectangle boundsPlayer = new Rectangle((int) Game.player.getX(), (int) Game.player.getY(), Game.player.getDimension().getWidth(), Game.player.getDimension().getHeight());
+        Rectangle boundsEnemy = new Rectangle((int) Game.enemy.getX(), (int) Game.enemy.getY(), Game.enemy.getDimension().getWidth(), Game.player.getDimension().getHeight());
 
         if (bounds.intersects(boundsPlayer)) {
             int angle = new Random().nextInt(75) + 46;
@@ -71,7 +70,12 @@ public class Ball implements Entity {
     @Override
     public void render(Graphics graphics) {
         graphics.setColor(Color.YELLOW);
-        graphics.fillRect((int) getX(), (int) getY(), width, height);
+        graphics.fillRect((int) getX(), (int) getY(), dimension.getWidth(), dimension.getHeight());
+    }
+
+    @Override
+    public CustomDimension getDimension() {
+        return dimension;
     }
 
     @Override

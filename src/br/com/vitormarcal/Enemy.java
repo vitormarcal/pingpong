@@ -4,16 +4,15 @@ import java.awt.*;
 
 public class Enemy implements Entity {
 
-    public final int width;
-    public final int height;
+    private final CustomDimension dimension;
     private double x;
     private double y;
 
-    public Enemy(double x, double y) {
+    Enemy(double x, double y) {
         this.x = x;
         this.y = y;
-        width = 40;
-        height = 5;
+
+        dimension = CustomDimension.of(40, 5);
     }
 
     @Override
@@ -24,7 +23,12 @@ public class Enemy implements Entity {
     @Override
     public void render(Graphics graphics) {
         graphics.setColor(Color.RED);
-        graphics.fillRect((int) x, (int) y, width, height);
+        graphics.fillRect((int) x, (int) y, dimension.getWidth(), dimension.getHeight());
+    }
+
+    @Override
+    public CustomDimension getDimension() {
+        return dimension;
     }
 
     @Override

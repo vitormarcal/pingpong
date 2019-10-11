@@ -7,24 +7,22 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
-public class Game extends Canvas implements Runnable, KeyListener {
+public class Game extends Canvas implements Runnable, KeyListener, Tickable, Renderable {
 
-    public static int WIDTH = 160;
-    public static int HEIGHT = 120;
-    public static int SCALE = 3;
+    static final CustomDimension dimension = CustomDimension.of(160, 120, 3);
 
-    public static Player player;
-    public static Enemy enemy;
-    public static Ball ball;
-    public BufferedImage layer;
+    static Player player;
+    static Enemy enemy;
+    static Ball ball;
+    private BufferedImage layer;
 
-    public Game() {
-        this.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+    Game() {
+        this.setPreferredSize(new Dimension(dimension.getScaleWidth(), dimension.getScaleHeight()));
         this.addKeyListener(this);
-        player = new Player(60, HEIGHT - 10);
+        player = new Player(60, dimension.getHeight() - 10);
         enemy = new Enemy(60, 5);
-        ball = new Ball(60, HEIGHT / 2);
-        layer = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
+        ball = new Ball(60, dimension.getHeight() / 2);
+        layer = new BufferedImage(dimension.getWidth(), dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
     }
 
     public static void main(String[] args) {
@@ -42,29 +40,51 @@ public class Game extends Canvas implements Runnable, KeyListener {
         new Thread(game).start();
     }
 
+    @Override
     public void tick() {
         player.tick();
         enemy.tick();
         ball.tick();
     }
 
+    @Override
     public void render() {
+        BufferStrategy bufferStrategy = initBufferedStrategy();
+
+        Graphics graphics = layer.getGraphics();
+        graphics.setColor(Color.BLACK);
+
+        graphics.fillRect(0, 0, dimension.getWidth(), dimension.getHeight());
+
+        player.render(graphics);
+        enemy.render(graphics);
+        ball.render(graphics);
+        render(bufferStrategy.getDrawGraphics());
+    }
+
+    @Override
+    public CustomDimension getDimension() {
+        return dimension;
+    }
+
+    @Override
+    public void render(Graphics graphics) {
+        graphics.drawImage(layer, 0, 0, dimension.getScaleWidth(), dimension.getScaleHeight(), null);
+        showBuffer();
+    }
+
+    private void showBuffer() {
+        BufferStrategy bufferStrategy = initBufferedStrategy();
+        bufferStrategy.show();
+    }
+
+    private BufferStrategy initBufferedStrategy() {
         BufferStrategy bufferStrategy = this.getBufferStrategy();
         if (bufferStrategy == null) {
             this.createBufferStrategy(3);
             bufferStrategy = this.getBufferStrategy();
         }
-        Graphics graphics = layer.getGraphics();
-        graphics.setColor(Color.BLACK);
-        graphics.fillRect(0, 0, WIDTH, HEIGHT);
-        player.render(graphics);
-        enemy.render(graphics);
-        ball.render(graphics);
-
-
-        graphics = bufferStrategy.getDrawGraphics();
-        graphics.drawImage(layer, 0, 0, WIDTH * SCALE, HEIGHT * SCALE, null);
-        bufferStrategy.show();
+        return bufferStrategy;
     }
 
     @Override
@@ -89,18 +109,18 @@ public class Game extends Canvas implements Runnable, KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            player.right = true;
+            player.setRight(true);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            player.left = true;
+            player.setLeft(true);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            player.right = false;
+            player.setRight(false);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            player.left = false;
+            player.setLeft(false);
         }
     }
 }

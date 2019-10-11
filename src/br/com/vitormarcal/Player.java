@@ -4,19 +4,18 @@ import java.awt.*;
 
 public class Player implements Entity {
 
+    private final CustomDimension dimension;
 
-    public final int height;
-    public final int width;
-    public boolean right;
-    public boolean left;
+    private boolean right;
+    private boolean left;
     private int x;
     private int y;
 
     public Player(int x, int y) {
         this.x = x;
         this.y = y;
-        width = 40;
-        height = 5;
+
+        dimension = CustomDimension.of(40, 5);
     }
 
     @Override
@@ -29,8 +28,8 @@ public class Player implements Entity {
         }
 
 
-        if (x + width > Game.WIDTH) {
-            x = Game.WIDTH - width;
+        if (x + dimension.getWidth() > Game.dimension.getWidth()) {
+            x = Game.dimension.getWidth() - dimension.getWidth();
         } else if (x < 0) {
             x = 0;
         }
@@ -40,7 +39,12 @@ public class Player implements Entity {
     @Override
     public void render(Graphics graphics) {
         graphics.setColor(Color.BLUE);
-        graphics.fillRect(x, y, width, height);
+        graphics.fillRect(x, y, dimension.getWidth(), dimension.getHeight());
+    }
+
+    @Override
+    public CustomDimension getDimension() {
+        return dimension;
     }
 
     @Override
@@ -51,5 +55,13 @@ public class Player implements Entity {
     @Override
     public double getY() {
         return y;
+    }
+
+    public void setLeft(boolean left) {
+        this.left = left;
+    }
+
+    public void setRight(boolean right) {
+        this.right = right;
     }
 }
