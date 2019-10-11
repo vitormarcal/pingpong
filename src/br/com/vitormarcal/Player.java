@@ -2,15 +2,15 @@ package br.com.vitormarcal;
 
 import java.awt.*;
 
-public class Player {
+public class Player implements Entity {
 
 
     public final int height;
     public final int width;
     public boolean right;
     public boolean left;
-    public int x;
-    public int y;
+    private int x;
+    private int y;
 
     public Player(int x, int y) {
         this.x = x;
@@ -19,6 +19,7 @@ public class Player {
         height = 5;
     }
 
+    @Override
     public void tick() {
 
         if (right) {
@@ -36,9 +37,19 @@ public class Player {
 
     }
 
+    @Override
     public void render(Graphics graphics) {
         graphics.setColor(Color.BLUE);
         graphics.fillRect(x, y, width, height);
     }
 
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
+    }
 }

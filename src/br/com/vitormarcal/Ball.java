@@ -3,14 +3,14 @@ package br.com.vitormarcal;
 import java.awt.*;
 import java.util.Random;
 
-public class Ball {
+public class Ball implements Entity {
 
     public final int width;
     public final int height;
-    public double x;
-    public double y;
-    public double dx;
-    public double dy;
+    private double x;
+    private double y;
+    private double dx;
+    private double dy;
 
     public double speed = 1.7;
 
@@ -25,6 +25,7 @@ public class Ball {
         dy = Math.sin(Math.toRadians(angle));
     }
 
+    @Override
     public void tick() {
 
         if (x + (dx * speed) + width >= Game.WIDTH) {
@@ -47,8 +48,8 @@ public class Ball {
         }
 
         Rectangle bounds = new Rectangle((int) (x + (dx * speed)), (int) (y + (dx * speed)), width, height);
-        Rectangle boundsPlayer = new Rectangle(Game.player.x, Game.player.y, Game.player.width, Game.player.height);
-        Rectangle boundsEnemy = new Rectangle((int) Game.enemy.x, (int) Game.enemy.y, Game.enemy.width, Game.enemy.height);
+        Rectangle boundsPlayer = new Rectangle((int) Game.player.getX(), (int) Game.player.getY(), Game.player.width, Game.player.height);
+        Rectangle boundsEnemy = new Rectangle((int) Game.enemy.getX(), (int) Game.enemy.getY(), Game.enemy.width, Game.enemy.height);
 
         if (bounds.intersects(boundsPlayer)) {
             int angle = new Random().nextInt(75) + 46;
@@ -67,8 +68,19 @@ public class Ball {
         }
     }
 
+    @Override
     public void render(Graphics graphics) {
         graphics.setColor(Color.YELLOW);
-        graphics.fillRect((int) x, (int) y, width, height);
+        graphics.fillRect((int) getX(), (int) getY(), width, height);
+    }
+
+    @Override
+    public double getX() {
+        return x;
+    }
+
+    @Override
+    public double getY() {
+        return y;
     }
 }
