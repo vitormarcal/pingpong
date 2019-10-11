@@ -5,8 +5,8 @@ import java.awt.*;
 public class Player {
 
 
-    private final int height;
-    private final int width;
+    public final int height;
+    public final int width;
     public boolean right;
     public boolean left;
     public int x;
@@ -16,7 +16,7 @@ public class Player {
         this.x = x;
         this.y = y;
         width = 40;
-        height = 10;
+        height = 5;
     }
 
     public void tick() {
@@ -28,7 +28,7 @@ public class Player {
         }
 
 
-        if (x+width > Game.WIDTH) {
+        if (x + width > Game.WIDTH) {
             x = Game.WIDTH - width;
         } else if (x < 0) {
             x = 0;

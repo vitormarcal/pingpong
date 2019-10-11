@@ -4,8 +4,8 @@ import java.awt.*;
 
 public class Enemy {
 
-    private final int width;
-    private final int height;
+    public final int width;
+    public final int height;
     public double x;
     public double y;
 
@@ -13,11 +13,11 @@ public class Enemy {
         this.x = x;
         this.y = y;
         width = 40;
-        height = 10;
+        height = 5;
     }
 
     public void tick() {
-        x += (Game.ball.x - x - 6);
+        x += (Game.ball.x - x - 6) * 0.085;
     }
 
     public void render(Graphics graphics) {
