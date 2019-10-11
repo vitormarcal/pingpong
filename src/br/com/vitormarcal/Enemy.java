@@ -17,12 +17,12 @@ public class Enemy {
     }
 
     public void tick() {
-
+        x += (Game.ball.x - x - 6);
     }
 
     public void render(Graphics graphics) {
         graphics.setColor(Color.RED);
-        graphics.fillRect((int)x, (int)y, width, height);
+        graphics.fillRect((int) x, (int) y, width, height);
     }
 
 }

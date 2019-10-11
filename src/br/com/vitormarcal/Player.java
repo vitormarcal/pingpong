@@ -6,11 +6,11 @@ public class Player {
 
 
     private final int height;
+    private final int width;
     public boolean right;
     public boolean left;
     public int x;
     public int y;
-    private int width;
 
     public Player(int x, int y) {
         this.x = x;
