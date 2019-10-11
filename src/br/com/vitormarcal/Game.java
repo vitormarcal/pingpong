@@ -1,5 +1,9 @@
 package br.com.vitormarcal;
 
+import br.com.vitormarcal.entities.Entity;
+import br.com.vitormarcal.entities.EntityFactory;
+import br.com.vitormarcal.entities.Player;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -9,19 +13,21 @@ import java.awt.image.BufferedImage;
 
 public class Game extends Canvas implements Runnable, KeyListener, Tickable, Renderable {
 
-    static final CustomDimension dimension = CustomDimension.of(160, 120, 3);
-
-    static Player player;
-    static Enemy enemy;
-    static Ball ball;
+    public static final CustomDimension dimension = CustomDimension.of(160, 120, 3);
+    private EntityFactory entityFactory;
     private BufferedImage layer;
+    private Player player;
 
-    Game() {
+    public Game() {
         this.setPreferredSize(new Dimension(dimension.getScaleWidth(), dimension.getScaleHeight()));
         this.addKeyListener(this);
-        player = new Player(60, dimension.getHeight() - 10);
-        enemy = new Enemy(60, 5);
-        ball = new Ball(60, dimension.getHeight() / 2);
+
+        entityFactory = EntityFactory.getEntityFactory();
+
+        player = entityFactory.fabricatePlayer(60, dimension.getHeight());
+        entityFactory.fabricateBall(60, dimension.getHeight());
+        entityFactory.fabricateEnemy(60, 5);
+
         layer = new BufferedImage(dimension.getWidth(), dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
     }
 
@@ -42,9 +48,7 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
 
     @Override
     public void tick() {
-        player.tick();
-        enemy.tick();
-        ball.tick();
+        entityFactory.entityList().forEach(Tickable::tick);
     }
 
     @Override
@@ -56,9 +60,7 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
 
         graphics.fillRect(0, 0, dimension.getWidth(), dimension.getHeight());
 
-        player.render(graphics);
-        enemy.render(graphics);
-        ball.render(graphics);
+        entityFactory.entityList().forEach(Entity::render);
         render(bufferStrategy.getDrawGraphics());
     }
 

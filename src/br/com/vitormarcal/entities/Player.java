@@ -1,4 +1,7 @@
-package br.com.vitormarcal;
+package br.com.vitormarcal.entities;
+
+import br.com.vitormarcal.CustomDimension;
+import br.com.vitormarcal.Game;
 
 import java.awt.*;
 

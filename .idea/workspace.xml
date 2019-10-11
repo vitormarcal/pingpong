@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ef84adc8-0ea9-432d-b6a2-b2dda7e9d927" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Renderable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/Renderable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/vitormarcal/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Player.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,13 +22,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="108" column="13" lean-forward="true" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+            <state relative-caret-position="1782">
+              <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1646#1647#0" expanded="true" />
+                <element signature="e#1682#1683#0" expanded="true" />
                 <element signature="e#1861#1862#0" expanded="true" />
                 <element signature="e#1888#1889#0" expanded="true" />
               </folding>
@@ -37,11 +39,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/EntityFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+              <folding>
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1139#1140#0" expanded="true" />
+                <element signature="e#1185#1186#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state relative-caret-position="282">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
                 <element signature="e#1101#1102#0" expanded="true" />
                 <element signature="e#1131#1132#0" expanded="true" />
                 <element signature="e#1234#1235#0" expanded="true" />
@@ -60,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="49" column="64" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="64" />
+            <state relative-caret-position="68">
+              <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2259#2260#0" expanded="true" />
@@ -79,11 +97,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="46" />
+            <state relative-caret-position="-102">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#320#321#0" expanded="true" />
                 <element signature="e#369#370#0" expanded="true" />
                 <element signature="e#578#579#0" expanded="true" />
@@ -98,12 +117,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+            <state relative-caret-position="-258">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#844#845#0" expanded="true" />
                 <element signature="e#876#877#0" expanded="true" />
                 <element signature="e#793#794#0" expanded="true" />
@@ -120,11 +139,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Entity.java">
+        <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="85">
+              <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#154#155#0" expanded="true" />
                 <element signature="e#210#211#0" expanded="true" />
               </folding>
@@ -168,10 +188,16 @@
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/a.java" />
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java" />
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java" />
-        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java" />
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/Renderable.java" />
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/Player.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/vitormarcal/Game.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Game.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Entity.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Enemy.java" />
         <option value="$PROJECT_DIR$/src/br/com/vitormarcal/Game.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/EntityFactory.java" />
+        <option value="$PROJECT_DIR$/src/br/com/vitormarcal/entities/Ball.java" />
       </list>
     </option>
   </component>
@@ -206,6 +232,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="vitormarcal" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pingpong" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pingpong" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vitormarcal" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -219,6 +252,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.vitormarcal.entities" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -231,13 +269,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Game">
-    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Game (1)">
+    <configuration name="Game (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.vitormarcal.Game" />
       <module name="pingpong" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.vitormarcal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.vitormarcal.entities.vitormarcal.Game" />
+      <module name="pingpong" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.vitormarcal.entities.vitormarcal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -258,9 +309,11 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Game" />
+      <item itemvalue="Application.Game (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Game (1)" />
         <item itemvalue="Application.Game" />
         <item itemvalue="Application.Main" />
       </list>
@@ -277,7 +330,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570747393347</updated>
       <workItem from="1570747398459" duration="4262000" />
-      <workItem from="1570808379852" duration="11743000" />
+      <workItem from="1570808379852" duration="14863000" />
     </task>
     <task id="LOCAL-00001" summary="add gitignore">
       <created>1570808462710</created>
@@ -314,16 +367,24 @@
       <option name="project" value="LOCAL" />
       <updated>1570815899762</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update com refatoração encapsulando valores">
+      <created>1570820174226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570820174226</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16005000" />
+    <option name="totallyTimeSpent" value="19125000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2521322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -333,7 +394,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39869988" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -435,7 +496,8 @@
     <MESSAGE value="add movimento do inimigo acompanhando a bola" />
     <MESSAGE value="finalizando o jogo" />
     <MESSAGE value="criando interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="criando interfaces" />
+    <MESSAGE value="update com refatoração encapsulando valores" />
+    <option name="LAST_COMMIT_MESSAGE" value="update com refatoração encapsulando valores" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Main.java" />
@@ -523,19 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding>
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-            <element signature="e#1234#1235#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Renderable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -543,56 +592,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Ball.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="49" column="64" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="64" />
+        <state relative-caret-position="85">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2148#2149#0" expanded="true" />
-            <element signature="e#2178#2179#0" expanded="true" />
-            <element signature="e#2217#2218#0" expanded="true" />
-            <element signature="e#2247#2248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="46" />
-          <folding>
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#605#606#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
             <element signature="e#154#155#0" expanded="true" />
             <element signature="e#210#211#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        <state relative-caret-position="-258">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#844#845#0" expanded="true" />
             <element signature="e#876#877#0" expanded="true" />
             <element signature="e#793#794#0" expanded="true" />
@@ -607,14 +624,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/CustomDimension.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="108" column="13" lean-forward="true" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+        <state relative-caret-position="282">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1271#1272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#674#675#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1646#1647#0" expanded="true" />
+            <element signature="e#1682#1683#0" expanded="true" />
             <element signature="e#1861#1862#0" expanded="true" />
             <element signature="e#1888#1889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/EntityFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="46" column="34" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+          <folding>
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1139#1140#0" expanded="true" />
+            <element signature="e#1185#1186#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/vitormarcal/entities/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2259#2260#0" expanded="true" />
+            <element signature="e#2291#2292#0" expanded="true" />
+            <element signature="e#2148#2149#0" expanded="true" />
+            <element signature="e#2178#2179#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+            <element signature="e#2247#2248#0" expanded="true" />
           </folding>
         </state>
       </provider>

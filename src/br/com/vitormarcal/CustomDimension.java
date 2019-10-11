@@ -17,11 +17,11 @@ public final class CustomDimension {
         this.scale = scale;
     }
 
-    static CustomDimension of(int width, int height) {
+    public static CustomDimension of(int width, int height) {
         return new CustomDimension(width, height);
     }
 
-    static CustomDimension of(int width, int height, int scale) {
+    public static CustomDimension of(int width, int height, int scale) {
         if (scale <= 0) {
             scale = 1;
         }
@@ -36,19 +36,19 @@ public final class CustomDimension {
         return new CustomDimension(width, height, scale);
     }
 
-    int getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    int getScaleHeight() {
+    public int getScaleHeight() {
         return height * scale;
     }
 
-    int getWidth() {
+    public int getWidth() {
         return width;
     }
 
-    int getScaleWidth() {
+    public int getScaleWidth() {
         return width * scale;
     }
 
