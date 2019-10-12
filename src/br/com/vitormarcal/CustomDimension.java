@@ -21,7 +21,7 @@ public final class CustomDimension {
         return new CustomDimension(width, height);
     }
 
-    public static CustomDimension of(int width, int height, int scale) {
+    static CustomDimension of(int width, int height, int scale) {
         if (scale <= 0) {
             scale = 1;
         }
@@ -40,7 +40,7 @@ public final class CustomDimension {
         return height;
     }
 
-    public int getScaleHeight() {
+    int getScaleHeight() {
         return height * scale;
     }
 
@@ -48,7 +48,7 @@ public final class CustomDimension {
         return width;
     }
 
-    public int getScaleWidth() {
+    int getScaleWidth() {
         return width * scale;
     }
 

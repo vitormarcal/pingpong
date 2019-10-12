@@ -13,18 +13,18 @@ import java.awt.image.BufferedImage;
 
 public class Game extends Canvas implements Runnable, KeyListener, Tickable, Renderable {
 
+    public static boolean RESTART = false;
     public static final CustomDimension dimension = CustomDimension.of(160, 120, 3);
     private EntityFactory entityFactory;
     private BufferedImage layer;
-    private Player player;
 
-    public Game() {
+    private Game() {
         this.setPreferredSize(new Dimension(dimension.getScaleWidth(), dimension.getScaleHeight()));
         this.addKeyListener(this);
 
         entityFactory = EntityFactory.getEntityFactory();
 
-        player = entityFactory.fabricatePlayer(60, dimension.getHeight());
+        entityFactory.fabricatePlayer(60, dimension.getHeight());
         entityFactory.fabricateBall(60, dimension.getHeight());
         entityFactory.fabricateEnemy(60, 5);
 
@@ -48,10 +48,13 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
 
     @Override
     public void tick() {
+        if (RESTART) {
+            new Game();
+            RESTART = false;
+        }
         entityFactory.entityList().forEach(Tickable::tick);
     }
 
-    @Override
     public void render() {
         BufferStrategy bufferStrategy = initBufferedStrategy();
 
@@ -60,7 +63,7 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
 
         graphics.fillRect(0, 0, dimension.getWidth(), dimension.getHeight());
 
-        entityFactory.entityList().forEach(Entity::render);
+        entityFactory.entityList().forEach(entity -> entity.render(graphics));
         render(bufferStrategy.getDrawGraphics());
     }
 
@@ -111,8 +114,10 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            Player player = (Player) entityFactory.getEntitySet(Player.class);
             player.setRight(true);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            Player player = (Player) entityFactory.getEntitySet(Player.class);
             player.setLeft(true);
         }
     }
@@ -120,8 +125,10 @@ public class Game extends Canvas implements Runnable, KeyListener, Tickable, Ren
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            Player player = (Player) entityFactory.getEntitySet(Player.class);
             player.setRight(false);
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            Player player = (Player) entityFactory.getEntitySet(Player.class);
             player.setLeft(false);
         }
     }

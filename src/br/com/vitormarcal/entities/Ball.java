@@ -9,16 +9,15 @@ import java.util.Random;
 public class Ball implements Entity {
 
     private final CustomDimension dimension;
-    private final Enemy enemy;
-    private final Player player;
+    private final EntityFactory entityFactory;
     private double x;
     private double y;
     private double dx;
     private double dy;
 
-    public double speed = 1.7;
+    private double speed = 1.7;
 
-    public Ball(double x, double y) {
+    Ball(double x, double y) {
         this.x = x;
         this.y = y;
 
@@ -28,13 +27,16 @@ public class Ball implements Entity {
         dx = Math.cos(Math.toRadians(angle));
         dy = Math.sin(Math.toRadians(angle));
 
-        EntityFactory entityFactory = EntityFactory.getEntityFactory();
-        enemy = (Enemy) entityFactory.getEntitySet(Enemy.class);
-        player = (Player) entityFactory.getEntitySet(Player.class);
+        entityFactory = EntityFactory.getEntityFactory();
+
+
     }
 
     @Override
     public void tick() {
+
+        Enemy enemy = (Enemy) entityFactory.getEntitySet(Enemy.class);
+        Player player = (Player) entityFactory.getEntitySet(Player.class);
 
         if (x + (dx * speed) + dimension.getWidth() >= Game.dimension.getWidth()) {
             dx *= -1;
@@ -47,11 +49,11 @@ public class Ball implements Entity {
 
         if (y >= Game.dimension.getHeight()) {
             System.out.println("Ponto do inimigo!");
-            new Game();
+            Game.RESTART = true;
             return;
         } else if (y < 0) {
             System.out.println("Ponto do jogador!");
-            new Game();
+            Game.RESTART = true;
             return;
         }
 

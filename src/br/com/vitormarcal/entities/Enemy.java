@@ -7,21 +7,21 @@ import java.awt.*;
 public class Enemy implements Entity {
 
     private final CustomDimension dimension;
-    private final Ball ball;
+    private final EntityFactory entityFactory;
     private double x;
     private double y;
 
-    public Enemy(double x, double y) {
+    Enemy(double x, double y) {
         this.x = x;
         this.y = y;
 
         dimension = CustomDimension.of(40, 5);
-        EntityFactory entityFactory = EntityFactory.getEntityFactory();
-        ball = (Ball) entityFactory.getEntitySet(Ball.class);
+        entityFactory = EntityFactory.getEntityFactory();
     }
 
     @Override
     public void tick() {
+        Ball ball = (Ball) entityFactory.getEntitySet(Ball.class);
         x += (ball.getX() - x - 6) * 0.085;
     }
 
