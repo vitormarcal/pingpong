@@ -15,7 +15,7 @@ public class Ball implements Entity {
     private double dx;
     private double dy;
 
-    private double speed = 1.7;
+    private double speed = 1.0;
 
     Ball(double x, double y) {
         this.x = x;
@@ -76,6 +76,10 @@ public class Ball implements Entity {
                 dy *= -1;
             }
         }
+
+        speed += ((speed * 0.1) / 100);
+        if (speed > 2.5)
+            speed = 2.5;
     }
 
     @Override
