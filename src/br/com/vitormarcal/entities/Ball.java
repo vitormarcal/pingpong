@@ -57,6 +57,12 @@ public class Ball implements Entity {
             return;
         }
 
+        computeBounds(enemy, player);
+
+        increaseSpeed();
+    }
+
+    private void computeBounds(Enemy enemy, Player player) {
         Rectangle bounds = new Rectangle((int) (x + (dx * speed)), (int) (y + (dx * speed)), dimension.getWidth(), dimension.getHeight());
         Rectangle boundsPlayer = new Rectangle((int) player.getX(), (int) player.getY(), player.getDimension().getWidth(), player.getDimension().getHeight());
         Rectangle boundsEnemy = new Rectangle((int) enemy.getX(), (int) enemy.getY(), enemy.getDimension().getWidth(), enemy.getDimension().getHeight());
@@ -76,7 +82,9 @@ public class Ball implements Entity {
                 dy *= -1;
             }
         }
+    }
 
+    private void increaseSpeed() {
         speed += ((speed * 0.1) / 100);
         if (speed > 2.5)
             speed = 2.5;
