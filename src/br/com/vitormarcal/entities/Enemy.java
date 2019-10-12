@@ -1,6 +1,7 @@
 package br.com.vitormarcal.entities;
 
 import br.com.vitormarcal.CustomDimension;
+import br.com.vitormarcal.Game;
 
 import java.awt.*;
 
@@ -23,6 +24,12 @@ public class Enemy implements Entity {
     public void tick() {
         Ball ball = (Ball) entityFactory.getEntitySet(Ball.class);
         x += (ball.getX() - x - 6) * 0.085;
+
+        if (x + dimension.getWidth() > Game.dimension.getWidth()) {
+            x = Game.dimension.getWidth() - dimension.getWidth();
+        } else if (x < 0) {
+            x = 0;
+        }
     }
 
     @Override
